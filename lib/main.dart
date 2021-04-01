@@ -11,6 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Road Circuit',
+      theme: ThemeData(
+        splashFactory: InkRipple.splashFactory
+      ),
       home: HomePage()
     );
   }

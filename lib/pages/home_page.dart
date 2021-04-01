@@ -42,27 +42,106 @@ class HomePage extends StatelessWidget {
 
                 SafeArea(
                   child: Padding(
-                    padding: EdgeInsets.only(left: 30.0, right: 30.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        IconButton(icon: Icon(Icons.menu), onPressed: (){}),
-                        // TextFormField(
-                        //   decoration: InputDecoration(
-                        //     labelText: 'Buscar'
-                        //   ),
-                        // )
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () { print('aaaaaaaaaaa'); },
-                            child: TextField(
-                              enabled: false,
-                              decoration: InputDecoration(
-                                hintText: 'Añadir o buscar paradas'
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: SafeArea(
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 45.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xff1f2022),
+                                    borderRadius: BorderRadius.circular(12.0)
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 15.0, right: 10.0),
+                                        child: InkResponse(
+                                          child: Icon(Icons.menu, color: Colors.grey[600], size: 25.0,),
+                                          onTap: () {
+                                            // TODO: abrir el menu lateral
+                                            print('Tap en el icono de menu');
+                                          },
+                                        )
+                                      ),
+                                      InkResponse(
+                                        child: Text(
+                                          'Añadir o buscar paradas',
+                                          style: TextStyle(
+                                            fontSize: 18.0,
+                                            color: Colors.grey[600],
+                                          ),
+                                        ),
+                                        onTap: () {
+                                          // TODO: abrir la nueva pantalla para agregar rutas
+                                          print('Tap en el buscador');
+                                        },
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Spacer(),
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 10.0),
+                          child: Container(
+                            width: 120.0,
+                            height: 45.0,
+                            decoration: BoxDecoration(
+                              color: Color(0xff1f2022),
+                              // color: Colors.red,
+                              borderRadius: BorderRadius.circular(30.0)
+                            ),
+                            child: Material(
+                              color: Colors.transparent,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 15.0),
+                                    child: InkResponse(
+                                      // borderRadius: BorderRadius.only(
+                                      //   topLeft: Radius.circular(30.0),
+                                      //   topRight: Radius.circular(30.0),
+                                      // ),
+                                      child: Container(
+                                        width: 40.0,
+                                        height: 45.0,
+                                        child: Icon(Icons.aspect_ratio, color: Colors.white60,)
+                                      ),
+                                      onTap: () {
+                                        print('tap en boton de agrandar el mapa');
+                                      },
+                                    )
+                                  ),
+                                  Spacer(),
+                                  Padding(
+                                    padding: EdgeInsets.only(right: 15.0),
+                                    child: InkResponse(
+                                      child: Container(
+                                        width: 40.0,
+                                        height: 45.0,
+                                        child: Icon(Icons.gps_fixed, color: Colors.white60)
+                                      ),
+                                      onTap: () {
+                                        print('tap en boton activar ubicacion gps');
+                                      },
+                                    )
+                                  )
+                                ],
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
