@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                                   width: double.infinity,
                                   height: 45.0,
                                   decoration: BoxDecoration(
-                                      color: Color(0xff1f2022),
+                                      color: Theme.of(context).backgroundColor,
                                       borderRadius:
                                           BorderRadius.circular(12.0)),
                                   child: Row(
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                                           'Añadir o buscar paradas',
                                           style: TextStyle(
                                             fontSize: 18.0,
-                                            color: Colors.grey[600],
+                                            color: Theme.of(context).primaryTextTheme.bodyText2.color,
                                           ),
                                         ),
                                         onTap: () {
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                                             height: 45.0,
                                             child: Icon(
                                               Icons.aspect_ratio,
-                                              color: Colors.white60,
+                                              color: Theme.of(context).iconTheme.color,
                                             )),
                                         onTap: () {
                                           print(
@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                                             width: 40.0,
                                             height: 45.0,
                                             child: Icon(Icons.gps_fixed,
-                                                color: Colors.white60)),
+                                                color: Theme.of(context).iconTheme.color)),
                                         onTap: () {
                                           print(
                                               'tap en boton activar ubicacion gps');
@@ -150,13 +150,12 @@ class _HomePageState extends State<HomePage> {
               height: size.height * 0.6, // TODO: 0.3 cuando se toque expandir
               width: size.width,
               decoration: BoxDecoration(
-                color: Color(0xff1f2022),
+                color: Theme.of(context).backgroundColor,
               ),
               child: SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
                 child: Column(
                   children: [
-                    //TODO: este row necesita el evento de click
                     Material(
                       color: Colors.transparent,
                       child: InkResponse(
@@ -176,14 +175,14 @@ class _HomePageState extends State<HomePage> {
                                       Text(
                                         'mié feb. 17',
                                         style: TextStyle(
-                                            color: Colors.white,
+                                            color: Theme.of(context).primaryTextTheme.bodyText1.color,
                                             fontSize: 20.0,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         '0 min • 2 paradas',
                                         style: TextStyle(
-                                            color: Colors.grey[600],
+                                            color: Theme.of(context).primaryTextTheme.bodyText2.color,
                                             fontSize: 14.0),
                                       )
                                     ],
@@ -238,7 +237,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Text(
                                     'Viaje de ida y vuelta desde la ubicacion a...',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16.0),
+                                        color: Theme.of(context).primaryTextTheme.bodyText1.color, fontSize: 16.0),
                                   ),
                                 )
                               ],
@@ -259,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Text(
                                     'Iniciar ahora mismo',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16.0),
+                                        color: Theme.of(context).primaryTextTheme.bodyText1.color, fontSize: 16.0),
                                   ),
                                 )
                               ],
@@ -291,7 +290,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'Ballivian, Centro, Santa Cruz de ..',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Theme.of(context).primaryTextTheme.bodyText1.color,
                                 fontSize: 18.0,
                               ),
                             )
@@ -304,7 +303,7 @@ class _HomePageState extends State<HomePage> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  VerticalDivider(color: Colors.white)
+                                  VerticalDivider(color: Theme.of(context).primaryTextTheme.bodyText1.color)
                                 ],
                               ),
                             )),
