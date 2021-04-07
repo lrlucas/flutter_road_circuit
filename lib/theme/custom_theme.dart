@@ -6,6 +6,7 @@ class CustomTheme {
 
   static ThemeData get darkTheme {
     return ThemeData(
+      accentColor: Color(0xff448AFF),
       backgroundColor: Color(0xff1f2022),
       splashFactory: InkRipple.splashFactory,
       primaryTextTheme: TextTheme(

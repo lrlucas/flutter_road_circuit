@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_road_circuit/widgets/custom_semi_input.dart';
 import 'package:flutter_road_circuit/widgets/start_end_route_page.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -47,44 +48,18 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Expanded(
                               child: SafeArea(
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 45.0,
-                                  decoration: BoxDecoration(
-                                      color: Theme.of(context).backgroundColor,
-                                      borderRadius:
-                                          BorderRadius.circular(12.0)),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 15.0, right: 10.0),
-                                          child: InkResponse(
-                                            child: Icon(
-                                              Icons.menu,
-                                              color: Colors.grey[600],
-                                              size: 25.0,
-                                            ),
-                                            onTap: () {
-                                              // TODO: abrir el menu lateral
-                                              print('Tap en el icono de menu');
-                                            },
-                                          )),
-                                      InkResponse(
-                                        child: Text(
-                                          'Añadir o buscar paradas',
-                                          style: TextStyle(
-                                            fontSize: 18.0,
-                                            color: Theme.of(context).primaryTextTheme.bodyText2.color,
-                                          ),
-                                        ),
-                                        onTap: () {
-                                          // TODO: abrir la nueva pantalla para agregar rutas
-                                          print('Tap en el buscador');
-                                        },
-                                      )
-                                    ],
-                                  ),
+                                child: CustomSemiImput(
+                                  backgroundColor: Theme.of(context).backgroundColor,
+                                  text: 'Añadir o buscar paradas',
+                                  colorText: Theme.of(context).primaryTextTheme.bodyText2.color,
+                                  onTapText: () {
+                                    print('tap en el buscador palabra');
+                                  },
+                                  leftIcon: Icons.menu,
+                                  colorLeftIcon: Colors.grey[600],
+                                  onTapLeftIcon: () {
+                                    print('tap en el icono de menu');
+                                  },
                                 ),
                               ),
                             )
