@@ -8,6 +8,7 @@ class CustomTheme {
     return ThemeData(
       accentColor: Color(0xff448AFF),
       backgroundColor: Color(0xff1f2022),
+      dialogBackgroundColor: Color(0xff1f2022),
       splashFactory: InkRipple.splashFactory,
       primaryTextTheme: TextTheme(
         bodyText1: TextStyle(

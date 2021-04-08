@@ -151,23 +151,6 @@ class _CustomSemiImputState extends State<CustomSemiImput> {
           _showIconLeft(),
 
           _showText(),
-
-          // InkWell(
-          //   child: Column(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //       Text(
-          //         widget.text,
-          //         style: TextStyle(
-          //           fontSize: 18.0,
-          //           color: widget.colorText,
-          //         ),
-          //       ),
-                
-          //     ],
-          //   ),
-          //   onTap: widget.onTapText,
-          // ),
           
           _putSpacer(),
           _showIconRight()

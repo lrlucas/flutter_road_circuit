@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_road_circuit/helpers/helpers.dart';
 import 'package:flutter_road_circuit/widgets/custom_semi_input.dart';
-import 'package:flutter_road_circuit/widgets/start_end_route_page.dart';
+import 'package:flutter_road_circuit/pages/start_end_route_page.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,6 +25,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
+    // change status bar
+    changeStatusBarDark();
+
     return Scaffold(
       body: Column(
         children: [
@@ -54,6 +59,7 @@ class _HomePageState extends State<HomePage> {
                                   colorText: Theme.of(context).primaryTextTheme.bodyText2.color,
                                   onTapText: () {
                                     print('tap en el buscador palabra');
+                                    Navigator.pushNamed(context, '/add-stops-page');
                                   },
                                   leftIcon: Icons.menu,
                                   colorLeftIcon: Colors.grey[600],
