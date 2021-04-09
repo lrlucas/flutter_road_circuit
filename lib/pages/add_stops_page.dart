@@ -7,6 +7,8 @@ class AddStopsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final size = MediaQuery.of(context).size;
+
     changeStatusBarLight();
 
     return Scaffold(
@@ -17,14 +19,35 @@ class AddStopsPage extends StatelessWidget {
         backgroundColor: Theme.of(context).dialogBackgroundColor,
         flexibleSpace: Column(
           mainAxisAlignment: MainAxisAlignment.end,
+          // crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            CustomSemiImput(
-              text: 'Añadir o buscar paradas',
-              backgroundColor: Color(0xff161719),
-              colorText: Theme.of(context).primaryTextTheme.bodyText1.color,
-            ),
+            Row(
+              children: [
+                Container(
+                  width: size.width * 0.7,
+                  height: 50.0,
+                  color: Colors.red,
+                )
+              ],
+            )
+            // CustomSemiImput(
+            //   height: 10.0,
+            //   text: 'Añadir o buscar paradas',
+            //   backgroundColor: Color(0xff161719),
+            //   colorText: Theme.of(context).primaryTextTheme.bodyText1.color,
+            // ),    
           ],
         ),
+        // flexibleSpace: Column(
+        //   mainAxisAlignment: MainAxisAlignment.end,
+        //   children: [
+        //     CustomSemiImput(
+        //       text: 'Añadir o buscar paradas',
+        //       backgroundColor: Color(0xff161719),
+        //       colorText: Theme.of(context).primaryTextTheme.bodyText1.color,
+        //     ),
+        //   ],
+        // ),
         
       ),
       body: SafeArea(
