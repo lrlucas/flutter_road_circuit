@@ -2,67 +2,78 @@ import 'package:flutter/material.dart';
 import 'package:flutter_road_circuit/helpers/helpers.dart';
 import 'package:flutter_road_circuit/widgets/custom_semi_input.dart';
 
+class AddStopsPage extends StatefulWidget {
+  @override
+  _AddStopsPageState createState() => _AddStopsPageState();
+}
 
-class AddStopsPage extends StatelessWidget {
+class _AddStopsPageState extends State<AddStopsPage> {
+  final TextEditingController _filter = TextEditingController();
+
+  String _searchText = "";
+
+  // names filtered by search text
+  List names = [];
+
+  // TODO: cambiar el icono para que se haga un autofocus cuando se 
+  // se abra la pagina
+  Icon _searchIcon = Icon(Icons.search);
+
+  Widget _appBarTitle = Text('Search example');
+
   @override
   Widget build(BuildContext context) {
-
     final size = MediaQuery.of(context).size;
 
-    changeStatusBarLight();
+
+
+
+    void _searchPresed() {
+
+      setState(() {
+        if (this._searchIcon.icon == Icons.search) {
+          this._searchIcon = Icon(Icons.close);
+          this._appBarTitle = TextField(
+            controller: _filter,
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.search),
+              hintText: 'Search...'
+            ),
+          );  
+        } else {
+          this._searchIcon = Icon(Icons.search);
+          this._appBarTitle = Text('Search Example');
+          
+        }
+      });
+
+    }
+
+    Widget _buildCustomAppBar(BuildContext context){
+      return AppBar(
+        centerTitle: true,
+        title: _appBarTitle,
+        automaticallyImplyLeading: false,
+        // leading: IconButton(
+        //   icon: _searchIcon,
+        //   onPressed: _searchPresed,
+        // ),
+        actions: [
+          IconButton(
+            icon: _searchIcon,
+            onPressed: _searchPresed,
+          ) 
+        ],
+      );
+    }
 
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
-      appBar: AppBar(
-        toolbarHeight: 100.0,
-        automaticallyImplyLeading: false,
-        backgroundColor: Theme.of(context).dialogBackgroundColor,
-        flexibleSpace: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          // crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Row(
-              children: [
-                Container(
-                  width: size.width * 0.7,
-                  height: 50.0,
-                  color: Colors.red,
-                )
-              ],
-            )
-            // CustomSemiImput(
-            //   height: 10.0,
-            //   text: 'Añadir o buscar paradas',
-            //   backgroundColor: Color(0xff161719),
-            //   colorText: Theme.of(context).primaryTextTheme.bodyText1.color,
-            // ),    
-          ],
-        ),
-        // flexibleSpace: Column(
-        //   mainAxisAlignment: MainAxisAlignment.end,
-        //   children: [
-        //     CustomSemiImput(
-        //       text: 'Añadir o buscar paradas',
-        //       backgroundColor: Color(0xff161719),
-        //       colorText: Theme.of(context).primaryTextTheme.bodyText1.color,
-        //     ),
-        //   ],
-        // ),
-        
-      ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            // custom appbar with search input
-            
-            // Container(
-            //   width: double.infinity,
-            //   height: 100.0,
-            //   color: Colors.grey,
-            // )
-          ],
-        ),
-      )
+        backgroundColor: Theme.of(context).backgroundColor,
+        appBar: _buildCustomAppBar(context),
+        resizeToAvoidBottomInset: true,
+        body: Center(
+          child: Text('AddStopsPages'),
+        )
     );
   }
 }
