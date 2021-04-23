@@ -57,6 +57,7 @@ class _AddStopsPageState extends State<AddStopsPage> {
           controller: _filter,
           decoration: InputDecoration(hintText: 'Search...'),
         );
+        this.searchInputFocus = true;
       } else {
         this._searchIcon = Icon(Icons.search);
         this._appBarTitle = Text('Search Example');
@@ -75,6 +76,11 @@ class _AddStopsPageState extends State<AddStopsPage> {
         onPressed: _searchPresed,
       ),
     );
+  }
+
+  // keyboar visibility
+  bool _keyboardVisible(BuildContext context) {
+    return !(MediaQuery.of(context).viewInsets.bottom == 0.0);
   }
 
   @override
@@ -116,7 +122,72 @@ class _AddStopsPageState extends State<AddStopsPage> {
                 )
               ),
             ],
-          ) : Text('NASHE')
+          ) : Container(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.0, right: 10.0, left: 10.0, bottom: 20.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Puntos de partida y de llegada',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 24.0
+                              ),
+                            )
+                          ],
+                        ),
+                        
+                      ],
+                    ),
+                  ),
+
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: size.width,
+                            height: 65.0,
+                            color: Theme.of(context).dialogBackgroundColor,
+                            child: Padding(
+                              padding: EdgeInsets.only(right: 13.0, left: 10.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Icon(
+                                    Icons.home_filled,
+                                    color: Theme.of(context).accentColor,
+                                    size: 30.0,
+                                  ),
+                                  Text(
+                                    'Punto de partida (p. ej., almacén)',
+                                    style: TextStyle(
+                                      fontSize: 15.0,
+                                      color: Theme.of(context).primaryTextTheme.bodyText1.color
+                                    ),
+                                  ),
+                                  TextButton(
+                                    child: Text('Establecer'),
+
+                                    onPressed: () {},
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  )
+                  
+                ],
+              )
+          )
 
         ));
   }

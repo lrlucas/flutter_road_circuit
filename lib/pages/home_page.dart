@@ -41,6 +41,8 @@ class _HomePageState extends State<HomePage> {
                       CameraPosition(target: LatLng(-17.751903, -63.216292)),
                   zoomControlsEnabled: false,
                   scrollGesturesEnabled: true,
+                  myLocationButtonEnabled: false,
+                  myLocationEnabled: true,
                 ),
                 SafeArea(
                   child: Padding(
