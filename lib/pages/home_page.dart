@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_road_circuit/helpers/helpers.dart';
+import 'package:flutter_road_circuit/pages/edit_direction_page.dart';
 import 'package:flutter_road_circuit/widgets/custom_cupertino_action_sheeet.dart';
 import 'package:flutter_road_circuit/widgets/custom_semi_input.dart';
 import 'package:flutter_road_circuit/pages/start_end_route_page.dart';
@@ -199,7 +200,6 @@ class _HomePageState extends State<HomePage> {
                                                         Size(50, 30))),
                                             onPressed: () {
                                               showCupertinoModalPopup(
-                                                
                                                 context: context,
                                                 builder: (BuildContext context) => CustomCupertinoActionSheet());
                                             },
@@ -266,25 +266,30 @@ class _HomePageState extends State<HomePage> {
 
                     Column(
                       children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 10.0, right: 15.0, top: 2.0),
-                              child: Text(
-                                '•',
+                        InkResponse(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/edit-direction');
+                          },
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: 10.0, right: 15.0, top: 2.0),
+                                child: Text(
+                                  '•',
+                                  style: TextStyle(
+                                      fontSize: 55.0, color: Colors.white),
+                                ),
+                              ),
+                              Text(
+                                'Ballivian, Centro, Santa Cruz de ..',
                                 style: TextStyle(
-                                    fontSize: 55.0, color: Colors.white),
-                              ),
-                            ),
-                            Text(
-                              'Ballivian, Centro, Santa Cruz de ..',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryTextTheme.bodyText1.color,
-                                fontSize: 18.0,
-                              ),
-                            )
-                          ],
+                                  color: Theme.of(context).primaryTextTheme.bodyText1.color,
+                                  fontSize: 18.0,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                         Container(
                             height: 30,
