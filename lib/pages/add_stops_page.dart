@@ -209,17 +209,18 @@ class _AddStopsPageState extends State<AddStopsPage> {
                                               ),
                                             ),
                                             style: ButtonStyle(
-                                                shape:
-                                                    MaterialStateProperty.all(
-                                              RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(15.0),
-                                                side: BorderSide(
-                                                  width: 0.8,
-                                                  color: Colors.grey,
+                                              shape: MaterialStateProperty.all(
+                                                RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15.0),
+                                                  side: BorderSide(
+                                                    width: 0.8,
+                                                    color: Colors.grey,
+                                                  ),
                                                 ),
                                               ),
-                                            )),
+                                            ),
                                             onPressed: () {},
                                           )
                                         ],
@@ -239,7 +240,9 @@ class _AddStopsPageState extends State<AddStopsPage> {
                                         Theme.of(context).dialogBackgroundColor,
                                     child: Padding(
                                       padding: EdgeInsets.only(
-                                          right: 13.0, left: 10.0),
+                                        right: 13.0,
+                                        left: 10.0,
+                                      ),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
@@ -281,12 +284,13 @@ class _AddStopsPageState extends State<AddStopsPage> {
                                                 shape:
                                                     MaterialStateProperty.all(
                                               RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          15.0),
-                                                  side: BorderSide(
-                                                      width: 0.8,
-                                                      color: Colors.grey)),
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                                side: BorderSide(
+                                                  width: 0.8,
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
                                             )),
                                             onPressed: () {},
                                           )
@@ -312,10 +316,11 @@ class _AddStopsPageState extends State<AddStopsPage> {
                                     Text(
                                       'Paradas',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                          fontSize: 24.0),
-                                    )
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        fontSize: 24.0,
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],
