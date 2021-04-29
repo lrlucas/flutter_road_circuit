@@ -5,6 +5,7 @@ class CustomSemiImput extends StatefulWidget {
   final String text;
   final VoidCallback onTapText;
   final Color colorText;
+  final double textSize;
 
   // left icon
   final IconData leftIcon;
@@ -27,34 +28,32 @@ class CustomSemiImput extends StatefulWidget {
   // hint text
   final String hintText;
   final Color colorHintText;
+  final double textSizeHint;
 
-
-  const CustomSemiImput({
-    Key key,
-    this.text = '',
-    this.onTapText,
-    this.colorText,
-    this.leftIcon,
-    this.onTapLeftIcon,
-    this.colorLeftIcon,
-    this.rightIcon,
-    this.colorRightIcon,
-    this.backgroundColor,
-    this.height = 45,
-    this.borderRadius = 12,
-    this.hintText = '',
-    this.colorHintText
-  }) : super(key: key);
+  const CustomSemiImput(
+      {Key key,
+      this.text = '',
+      this.textSize = 18.0,
+      this.onTapText,
+      this.colorText,
+      this.leftIcon,
+      this.onTapLeftIcon,
+      this.colorLeftIcon,
+      this.rightIcon,
+      this.colorRightIcon,
+      this.backgroundColor,
+      this.height = 45,
+      this.borderRadius = 12,
+      this.hintText = '',
+      this.textSizeHint = 13.0,
+      this.colorHintText})
+      : super(key: key);
 
   @override
   _CustomSemiImputState createState() => _CustomSemiImputState();
 }
 
 class _CustomSemiImputState extends State<CustomSemiImput> {
-  
-  
-  
-  
   _putSpacer() {
     if (widget.rightIcon == null) {
       return Container();
@@ -67,14 +66,9 @@ class _CustomSemiImputState extends State<CustomSemiImput> {
       return Container();
     }
     return Padding(
-      padding: EdgeInsets.only(right: 15.0),
-      child: Icon(
-        widget.rightIcon,
-        color: widget.colorRightIcon
-      )
-    );
+        padding: EdgeInsets.only(right: 15.0),
+        child: Icon(widget.rightIcon, color: widget.colorRightIcon));
   }
-
 
   _showIconLeft() {
     if (widget.leftIcon == null) {
@@ -90,7 +84,7 @@ class _CustomSemiImputState extends State<CustomSemiImput> {
           size: 25.0,
         ),
         onTap: widget.onTapLeftIcon,
-      )
+      ),
     );
   }
 
@@ -103,7 +97,7 @@ class _CustomSemiImputState extends State<CustomSemiImput> {
             Text(
               widget.text,
               style: TextStyle(
-                fontSize: 18.0,
+                fontSize: widget.textSize,
                 color: widget.colorText,
               ),
             ),
@@ -120,7 +114,7 @@ class _CustomSemiImputState extends State<CustomSemiImput> {
           Text(
             widget.text,
             style: TextStyle(
-              fontSize: 18.0,
+              fontSize: widget.textSize,
               color: widget.colorText,
             ),
           ),
@@ -144,17 +138,13 @@ class _CustomSemiImputState extends State<CustomSemiImput> {
       height: widget.height,
       decoration: BoxDecoration(
           color: widget.backgroundColor,
-          borderRadius: BorderRadius.circular(widget.borderRadius)
-        ),
+          borderRadius: BorderRadius.circular(widget.borderRadius)),
       child: Row(
         children: [
           _showIconLeft(),
-
           _showText(),
-          
           _putSpacer(),
           _showIconRight()
-
         ],
       ),
     );
