@@ -9,21 +9,15 @@ import 'package:flutter_road_circuit/pages/start_end_route_page.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomePage extends StatefulWidget {
-
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
-
-
   @override
   void initState() {
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +53,17 @@ class _HomePageState extends State<HomePage> {
                             Expanded(
                               child: SafeArea(
                                 child: CustomSemiImput(
-                                  backgroundColor: Theme.of(context).backgroundColor,
+                                  backgroundColor:
+                                      Theme.of(context).backgroundColor,
                                   text: 'Añadir o buscar paradas',
-                                  colorText: Theme.of(context).primaryTextTheme.bodyText2.color,
+                                  colorText: Theme.of(context)
+                                      .primaryTextTheme
+                                      .bodyText2
+                                      .color,
                                   onTapText: () {
                                     print('tap en el buscador palabra');
-                                    Navigator.pushNamed(context, '/add-stops-page');
+                                    Navigator.pushNamed(
+                                        context, '/add-stops-page');
                                   },
                                   leftIcon: Icons.menu,
                                   colorLeftIcon: Colors.grey[600],
@@ -99,7 +98,9 @@ class _HomePageState extends State<HomePage> {
                                             height: 45.0,
                                             child: Icon(
                                               Icons.aspect_ratio,
-                                              color: Theme.of(context).iconTheme.color,
+                                              color: Theme.of(context)
+                                                  .iconTheme
+                                                  .color,
                                             )),
                                         onTap: () {
                                           print(
@@ -114,7 +115,9 @@ class _HomePageState extends State<HomePage> {
                                             width: 40.0,
                                             height: 45.0,
                                             child: Icon(Icons.gps_fixed,
-                                                color: Theme.of(context).iconTheme.color)),
+                                                color: Theme.of(context)
+                                                    .iconTheme
+                                                    .color)),
                                         onTap: () {
                                           print(
                                               'tap en boton activar ubicacion gps');
@@ -161,14 +164,20 @@ class _HomePageState extends State<HomePage> {
                                       Text(
                                         'mié feb. 17',
                                         style: TextStyle(
-                                            color: Theme.of(context).primaryTextTheme.bodyText1.color,
+                                            color: Theme.of(context)
+                                                .primaryTextTheme
+                                                .bodyText1
+                                                .color,
                                             fontSize: 20.0,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         '0 min • 2 paradas',
                                         style: TextStyle(
-                                            color: Theme.of(context).primaryTextTheme.bodyText2.color,
+                                            color: Theme.of(context)
+                                                .primaryTextTheme
+                                                .bodyText2
+                                                .color,
                                             fontSize: 14.0),
                                       )
                                     ],
@@ -201,7 +210,10 @@ class _HomePageState extends State<HomePage> {
                                             onPressed: () {
                                               showCupertinoModalPopup(
                                                 context: context,
-                                                builder: (BuildContext context) => CustomCupertinoActionSheet());
+                                                builder: (BuildContext
+                                                        context) =>
+                                                    CustomCupertinoActionSheet(),
+                                              );
                                             },
                                           )
                                         ],
@@ -227,7 +239,11 @@ class _HomePageState extends State<HomePage> {
                                   child: Text(
                                     'Viaje de ida y vuelta desde la ubicacion a...',
                                     style: TextStyle(
-                                        color: Theme.of(context).primaryTextTheme.bodyText1.color, fontSize: 16.0),
+                                        color: Theme.of(context)
+                                            .primaryTextTheme
+                                            .bodyText1
+                                            .color,
+                                        fontSize: 16.0),
                                   ),
                                 )
                               ],
@@ -248,7 +264,11 @@ class _HomePageState extends State<HomePage> {
                                   child: Text(
                                     'Iniciar ahora mismo',
                                     style: TextStyle(
-                                        color: Theme.of(context).primaryTextTheme.bodyText1.color, fontSize: 16.0),
+                                        color: Theme.of(context)
+                                            .primaryTextTheme
+                                            .bodyText1
+                                            .color,
+                                        fontSize: 16.0),
                                   ),
                                 )
                               ],
@@ -284,7 +304,10 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 'Ballivian, Centro, Santa Cruz de ..',
                                 style: TextStyle(
-                                  color: Theme.of(context).primaryTextTheme.bodyText1.color,
+                                  color: Theme.of(context)
+                                      .primaryTextTheme
+                                      .bodyText1
+                                      .color,
                                   fontSize: 18.0,
                                 ),
                               )
@@ -298,7 +321,11 @@ class _HomePageState extends State<HomePage> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  VerticalDivider(color: Theme.of(context).primaryTextTheme.bodyText1.color)
+                                  VerticalDivider(
+                                      color: Theme.of(context)
+                                          .primaryTextTheme
+                                          .bodyText1
+                                          .color)
                                 ],
                               ),
                             )),
