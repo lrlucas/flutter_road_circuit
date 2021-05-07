@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_road_circuit/widgets/custom_timer.dart';
 import 'package:flutter_road_circuit/widgets/place_vehicle_action_sheet.dart';
 
 class EditDirectionPage extends StatefulWidget {
@@ -293,41 +294,49 @@ class _EditDirectionPageState extends State<EditDirectionPage> {
                 ),
               ),
 
-              Padding(
-                padding: EdgeInsets.only(top: 0.0),
-                child: Container(
-                  width: size.width,
-                  height: 50.0,
-                  color: Theme.of(context).dialogBackgroundColor,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 20.0),
-                        child: Text(
-                          'Hora más temp...',
-                          style: TextStyle(
-                            fontSize: 17.0,
-                            color: Theme.of(context)
-                                .primaryTextTheme
-                                .bodyText1
-                                .color,
+              InkWell(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 0.0),
+                  child: Container(
+                    width: size.width,
+                    height: 50.0,
+                    color: Theme.of(context).dialogBackgroundColor,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 20.0),
+                          child: Text(
+                            'Hora más temp...',
+                            style: TextStyle(
+                              fontSize: 17.0,
+                              color: Theme.of(context)
+                                  .primaryTextTheme
+                                  .bodyText1
+                                  .color,
+                            ),
                           ),
                         ),
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: EdgeInsets.only(right: 20.0),
-                        child: Text(
-                          'Cualquier hora',
-                          style: TextStyle(
-                            color: Theme.of(context).accentColor,
-                            fontSize: 17.0,
+                        Spacer(),
+                        Padding(
+                          padding: EdgeInsets.only(right: 20.0),
+                          child: Text(
+                            'Cualquier hora',
+                            style: TextStyle(
+                              color: Theme.of(context).accentColor,
+                              fontSize: 17.0,
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
+                onTap: () {
+                  showCupertinoModalPopup(
+                    context: context,
+                    builder: (BuildContext context) => CustomTimer(),
+                  );
+                },
               ),
 
               Padding(

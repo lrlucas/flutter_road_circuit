@@ -34,17 +34,31 @@ class PlaceVehicleActionSheet extends StatelessWidget {
           ],
         ),
         actions: [
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     ElevatedButton(
+          //       child: Text("Front"),
+          //       onPressed: () {},
+          //     ),
+          //     ElevatedButton(
+          //       child: Text("Front"),
+          //       onPressed: () {},
+          //     ),
+          //     ElevatedButton(
+          //       child: Text("Front"),
+          //       onPressed: () {},
+          //     ),
+          //   ],
+          // )
           CupertinoActionSheetAction(
             child: CupertinoSlidingSegmentedControl(
               backgroundColor: Colors.grey[600],
               groupValue: 0,
               children: {
-                0: Padding(
-                  padding: EdgeInsets.only(right: 10.0),
-                  child: TextButton(onPressed: () {}, child: Text('Front')),
-                ),
-                1: TextButton(onPressed: () {}, child: Text('Middle')),
-                2: TextButton(onPressed: () {}, child: Text('Back')),
+                0: Text('Front'),
+                1: Text('Front'),
+                2: Text('Front'),
               },
               onValueChanged: (int i) {},
             ),

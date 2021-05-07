@@ -42,8 +42,10 @@ class _HomePageState extends State<HomePage> {
                   myLocationEnabled: true,
                 ),
                 SafeArea(
+                  bottom: false,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                    padding:
+                        EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -76,55 +78,56 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                         Spacer(),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 10.0),
-                          child: Container(
-                            width: 120.0,
-                            height: 45.0,
-                            decoration: BoxDecoration(
-                                color: Color(0xff1f2022),
-                                // color: Colors.red,
-                                borderRadius: BorderRadius.circular(30.0)),
-                            child: Material(
-                              color: Colors.transparent,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 15.0),
-                                      child: InkResponse(
-                                        child: Container(
-                                            width: 40.0,
-                                            height: 45.0,
-                                            child: Icon(
-                                              Icons.aspect_ratio,
-                                              color: Theme.of(context)
-                                                  .iconTheme
-                                                  .color,
-                                            )),
-                                        onTap: () {
-                                          print(
-                                              'tap en boton de agrandar el mapa');
-                                        },
-                                      )),
-                                  Spacer(),
-                                  Padding(
-                                      padding: EdgeInsets.only(right: 15.0),
-                                      child: InkResponse(
-                                        child: Container(
-                                            width: 40.0,
-                                            height: 45.0,
-                                            child: Icon(Icons.gps_fixed,
-                                                color: Theme.of(context)
-                                                    .iconTheme
-                                                    .color)),
-                                        onTap: () {
-                                          print(
-                                              'tap en boton activar ubicacion gps');
-                                        },
-                                      ))
-                                ],
-                              ),
+                        Container(
+                          width: 120.0,
+                          height: 45.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xff1f2022),
+                            // color: Colors.red,
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(left: 15.0),
+                                  child: InkResponse(
+                                    child: Container(
+                                      width: 40.0,
+                                      height: 45.0,
+                                      child: Icon(
+                                        Icons.aspect_ratio,
+                                        color:
+                                            Theme.of(context).iconTheme.color,
+                                      ),
+                                    ),
+                                    onTap: () {
+                                      print('tap en boton de agrandar el mapa');
+                                    },
+                                  ),
+                                ),
+                                Spacer(),
+                                Padding(
+                                  padding: EdgeInsets.only(right: 15.0),
+                                  child: InkResponse(
+                                    child: Container(
+                                      width: 40.0,
+                                      height: 45.0,
+                                      child: Icon(
+                                        Icons.gps_fixed,
+                                        color:
+                                            Theme.of(context).iconTheme.color,
+                                      ),
+                                    ),
+                                    onTap: () {
+                                      print(
+                                          'tap en boton activar ubicacion gps');
+                                    },
+                                  ),
+                                )
+                              ],
                             ),
                           ),
                         ),
